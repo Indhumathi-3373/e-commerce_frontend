@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JC DESIGN | Place Order</title>
+<style>
+  body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f3f4f6;
+  display:flex;
+  justify-content:center;
+  padding:2rem;
+  
+}
+  form{
+    background:#fff;
+    width:420px;
+    border-radius:8px;
+    box-shadow:0 4px 12px #0001;
+    padding:24px;
+  }
+  h1{
+    text-align:center;
+    margin:0 0 4px;
+    font-size:22px;
+}   
+  p{
+    text-align:center;
+    margin:0 0 20px;
+    color:#666;
+}
+  .prod{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:16px;
+}
+  .prod img{
+    width:72px;
+    height:72px;
+    border-radius:6px;
+    object-fit:cover
+}
+  label{
+    display:block;
+    font-size:14px;
+    margin:12px 0 4px;
+}
+  input,select{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+}
+  input[type=number]{
+    width:80px;
+}
+  #btn{
+    border-radius:6px;
+    background:yellow;
+    color:black;
+    text-decoration:none;
+    margin-left:160px;
+    margin-top:10px;
+    padding:3px;
+    border:none;
+}
+  #btn:hover{background:rgb(250, 246, 9);
+  padding:2px;}
+</style>
+</head>
+<body>
+
+<form id="order">
+  <h1>GT SUBLIMATION</h1>
+  <p>Place Your Order</p>
+
+  <div class="prod">
+    <img src="https://via.placeholder.com/72?text=Tee" alt="JC T‑Shirt">
+    <div>
+      <strong>Classic T‑Shirt</strong><br>
+      ₹799 &nbsp;|&nbsp; Qty
+      <input type="number" id="qty" value="1" min="1">
+    </div>
+  </div>
+
+  <label for="name">Full Name*</label>
+  <input id="name" required>
+
+  <label for="addr">Shipping Address*</label>
+  <input id="addr" required>
+
+  <label for="pay">Payment Method*</label>
+  <select id="pay" required>
+    <option value="" disabled selected>Select</option>
+    <option value="cod">Cash on Delivery</option>
+    <option value="card">Card</option>
+    <option value="upi">UPI</option></select><br><br>
+    <button  id="btn"onclick="change()">place order</button><br>
+</form>
+
+ <script>
+     var button=document.getElementById("btn")
+     var name=document.getElementById("name")
+     var uaddr=document.getElementById("addr")
+      var pay=document.getElementById("pay")
+     function change(){
+      if(name.value=="" || uaddr.value=="" || pay.value=="" ){   
+            alert("please enter the requirements shown in the form");
+          }else{
+                alert("congratulations ! your order placed successfully ✔️ ");
+              window.open("home.html")
+          }
+          }
+ </script>
+</body><body>
+</body>
+</html>
