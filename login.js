@@ -3,7 +3,7 @@
             var email=document.getElementById("ema")
             var pass=document.getElementById("pas")
             function move(){ 
-                if(email.value =="" || pass==""){
+                if(email.value =="" || pass.value==""){
                  alert("please enter the details")}
                  else{
                     alert("login successfully!")
