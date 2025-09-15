@@ -1,2 +1,2 @@
-# e-commerce_frontend
-This E-commerce frontend project was made by HTML , CSS , JS
+This a Front-end project for E-commerce .
+Done by using HTML,CSS,JAVA SCRIPT.
