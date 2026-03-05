@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --text: #172132;
   --muted: #51607a;
   --line: #dbe2ef;
@@ -20,7 +20,7 @@ body {
   color: var(--text);
 }
 
-.login-wrap {
+.signup-wrap {
   min-height: 100vh;
   width: min(1080px, 92%);
   margin: 0 auto;
@@ -95,20 +95,6 @@ input {
   font-size: 0.95rem;
 }
 
-.pass-wrap {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.5rem;
-}
-
-.toggle {
-  border: 1px solid var(--line);
-  background: #f5f8ff;
-  border-radius: 10px;
-  padding: 0 0.8rem;
-  cursor: pointer;
-}
-
 #btn {
   margin-top: 0.4rem;
   border: none;
@@ -138,7 +124,7 @@ input {
 }
 
 @media (max-width: 840px) {
-  .login-wrap {
+  .signup-wrap {
     grid-template-columns: 1fr;
     padding: 1.2rem 0;
   }

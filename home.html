@@ -1,58 +1,85 @@
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GT Sports</title>
-   <link rel="stylesheet" href="./home.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | Home</title>
+  <link rel="stylesheet" href="./home.css">
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="home.html">GT SPORTS</a>
     <nav>
-        <h1>GT SPORTS</h1>
-        <ul><input type="text" placeholder="Search here....">
-            <li><a href="home.html">HOME</a> </li>
-            <li><a href="">CART</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="https://maps.google.com/maps?q=11.1137381%2C77.3625516&z=17&hl=en">LOCATION</a></li>
-        </ul>
+      <ul class="menu">
+        <li><a class="active" href="home.html">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="queries.html">My Queries</a></li>
+        <li><a href="placeorder.html">Order</a></li>
+      </ul>
     </nav>
-    <div class="container">
-        <div class="card">
-      <img src="image/shop1.jpg" alt="" />
-      <div class="test">
-        <h1>Grey Hawk Customized Cricket Jersey Design</h1>
-        <p>
-            Introducing our Grey Hawk Customized designed sublimation cricket team jerseys with customized
-             name and number. that extra confidence you need by wearing our jerseys to help you go all
-              out and make the pitch your own. Make your own style  customized jersey. 
-        </p>
-        <a href="login.html">BUY NOW</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="tag">Custom Teamwear</p>
+        <h1>Design jerseys your team is proud to wear</h1>
+        <p class="subtitle">Premium sublimation, clean fit, and fast delivery for cricket, football, and training kits.</p>
+        <a class="cta" href="#products">Explore Products</a>
       </div>
-    </div>
-    <div class="card">
-      <img src="image/shop2.jpg" alt="img" />
-      <div class="test">
-        <h1>Premium football jersey design Football jersey </h1>
-        <p>
-          Aidan Global’s Premium Football Jersey Design service is the ultimate solution for teams seeking 
-          top-tier performance, unmatched style, and personalized design. Our user-friendly online platform
-           allows you to effortlessly create custom football jerseys that reflect your team’s identity.
-        </p>
-         <a href="login.html">BUY NOW</a>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-head">
+        <h2>Featured Jerseys</h2>
+        <input id="searchInput" type="text" placeholder="Search products...">
       </div>
-    </div>
-    <div class="card">
-      <img src="image/shop3.jpg" alt="img" />
-      <div class="test">
-        <h1>Next Print Customized Polo Neck Maroon Jersey Design </h1>
-        <p>
-          This amazing printed t-shirt has a great finish and uses her POLYESTER fabric,
-which is soft and comfortable, so it goes great with your regular clothes.
-Without Buttons. Update your look with this amazing collection of sports tees from Next Print.
-        </p>
-        <a href="login.html">BUY NOW</a>
+
+      <div class="container" id="productGrid">
+        <article class="card" data-name="Grey Hawk Customized Cricket Jersey">
+          <img src="image/shop1.jpg" alt="Grey Hawk Cricket Jersey">
+          <div class="content">
+            <h3>Grey Hawk Cricket Jersey</h3>
+            <p>Customized sublimation jersey with player name and number for a match-day ready look.</p>
+            <div class="card-foot">
+              <span class="price">Rs. 899</span>
+              <a href="login.html">Buy Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Premium Football Jersey">
+          <img src="image/shop2.jpg" alt="Premium Football Jersey">
+          <div class="content">
+            <h3>Premium Football Jersey</h3>
+            <p>High-performance football jersey built for comfort, movement, and sharp team branding.</p>
+            <div class="card-foot">
+              <span class="price">Rs. 999</span>
+              <a href="login.html">Buy Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Polo Neck Maroon Jersey">
+          <img src="image/shop3.jpg" alt="Polo Neck Maroon Jersey">
+          <div class="content">
+            <h3>Polo Neck Maroon Jersey</h3>
+            <p>Soft polyester polo-neck sports tee with vibrant print quality for everyday training use.</p>
+            <div class="card-foot">
+              <span class="price">Rs. 799</span>
+              <a href="login.html">Buy Now</a>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
-    </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="auth-session.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>

@@ -1,20 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aboutus</title>
-    <link rel="stylesheet" href="./about.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | About</title>
+  <link rel="stylesheet" href="./about.css">
 </head>
 <body>
-    <div>
-        <img src="image/team.jpg" alt="img">
-      <div> <h1>About Us!</h1>
-        <h2 class="c">Our mission and Promise to you :</h2>
-        <p class="p1">Our mission is to provide you with the highest-quality products and services possible in a timely fashion and at a competitive price. We promise to listen to you and help you achieve your business goals. We will always be there with honest, expert advice and quick, friendly customer service. Our goal is to meet and exceed your expectations.</p>
-        <h2>company details:</h2><hr>
-        <p>👨🏻‍💼 Founder and CEO : Thamotharan S<br>👩🏻‍💼 co-founder: Gnana sandhya S<br>📌 Established since 2023 <br>👨🏻‍🏭 no_workers: 11<br>📈 order completion: 20<br>📩 orders from: kerala,tamilnadu,karnataka<br>📌 location: palayakadu,tirupur</p>
-    </div></div>
-    <a href="home.html">>>back to home</a>
+  <header class="topbar">
+    <a class="brand" href="home.html">GT SPORTS</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="queries.html">My Queries</a></li>
+        <li><a href="placeorder.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="overlay"></div>
+      <img src="image/team.jpg" alt="GT Sports team">
+      <div class="hero-copy">
+        <h1>About GT Sports</h1>
+        <p>We create custom sportswear that balances comfort, identity, and quality for clubs across South India.</p>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="panel">
+        <h2>Mission</h2>
+        <p>Deliver high-quality customized jerseys and dependable service so teams can focus on performance while we handle design and production.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Promise</h2>
+        <p>Transparent communication, on-time delivery, and practical guidance from fabric selection to final print.</p>
+      </article>
+    </section>
+
+    <section class="stats">
+      <h2>Company Snapshot</h2>
+      <div class="stats-grid">
+        <div class="stat-card"><strong>2023</strong><span>Founded</span></div>
+        <div class="stat-card"><strong>11+</strong><span>Team Members</span></div>
+        <div class="stat-card"><strong>20+</strong><span>Orders Completed</span></div>
+        <div class="stat-card"><strong>3 States</strong><span>Active Delivery</span></div>
+      </div>
+
+      <div class="leaders">
+        <p><strong>Founder & CEO:</strong> Thamotharan S</p>
+        <p><strong>Co-founder:</strong> Gnana Sandhya S</p>
+        <p><strong>Location:</strong> Palayakadu, Tirupur</p>
+      </div>
+    </section>
+</main>
+  <script src="auth-session.js"></script>
 </body>
 </html>

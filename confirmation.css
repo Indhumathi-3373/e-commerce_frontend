@@ -1,0 +1,124 @@
+﻿:root {
+  --line: #dbe2ef;
+  --text: #172132;
+  --muted: #51607a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 122, 24, 0.25), transparent 32%),
+    radial-gradient(circle at 90% 80%, rgba(54, 102, 255, 0.2), transparent 30%),
+    #f4f8ff;
+}
+
+.confirm-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.confirm-card {
+  width: min(560px, 100%);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 16px 30px rgba(17, 30, 54, 0.12);
+  padding: 1.3rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #e9fff0;
+  border: 1px solid #b6ebc5;
+  color: #185d2a;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+h1 {
+  margin-bottom: 0.45rem;
+}
+
+.sub {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.summary {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem;
+  background: #fbfdff;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px dashed #e2e8f3;
+  padding-bottom: 0.45rem;
+}
+
+.row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.row span {
+  color: var(--muted);
+}
+
+.row strong {
+  text-align: right;
+}
+
+.row.eta strong {
+  color: #0f3f8c;
+}
+
+.note {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.actions a {
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.62rem 0.82rem;
+  font-weight: 700;
+  color: #132138;
+  background: linear-gradient(90deg, #ff7a18, #ffb347);
+}
+
+.actions a.secondary {
+  background: #edf2ff;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 460px) {
+  .actions {
+    flex-direction: column;
+  }
+}

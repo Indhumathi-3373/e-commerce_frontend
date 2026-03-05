@@ -1,41 +1,59 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>JC DESIGN | Place Order</title>
-<link rel="stylesheet" href="./placeorder.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | Place Order</title>
+  <link rel="stylesheet" href="./placeorder.css">
 </head>
 <body>
-<form id="order">
-  <h1>GT SUBLIMATION</h1>
-  <p>Place Your Order</p>
+  <main class="page">
+    <form id="order" novalidate>
+      <h1>GT SUBLIMATION</h1>
+      <p class="sub">Place your order</p>
 
-  <div class="prod">
-    <img src="https://via.placeholder.com/72?text=Tee" alt="JC T‑Shirt">
-    <div>
-      <strong>Classic T‑Shirt</strong><br>
-      ₹799 &nbsp;|&nbsp; Qty
-      <input type="number" id="qty" value="1" min="1">
-    </div>
-  </div>
+      <section class="prod">
+        <img src="image/shop1.jpg" alt="Classic T-Shirt">
+        <div>
+          <strong>Classic Team Jersey</strong>
+          <p>Base price: Rs. 799</p>
 
-  <label for="name">Full Name*</label>
-  <input id="name" required>
+          <label for="qty">Quantity</label>
+          <input type="number" id="qty" value="1" min="1">
 
-  <label for="addr">Shipping Address*</label>
-  <input id="addr" required>
+          <label for="size">Size</label>
+          <select id="size" required>
+            <option value="">Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </div>
+      </section>
 
-  <label for="pay">Payment Method*</label>
-  <select id="pay" required>
-    <option value="" disabled selected>Select</option>
-    <option value="cod">Cash on Delivery</option>
-    <option value="card">Card</option>
-    <option value="upi">UPI</option></select><br><br>
-    <button  id="btn"onclick="change()">place order</button><br>
-</form>
-<script src="placeorder.js"></script>
- 
-</body><body>
+      <div class="total" id="totalPrice">Total: Rs. 799</div>
+
+      <label for="name">Full Name</label>
+      <input id="name" required>
+
+      <label for="addr">Shipping Address</label>
+      <textarea id="addr" rows="3" required></textarea>
+
+      <label for="pay">Payment Method</label>
+      <select id="pay" required>
+        <option value="">Select payment method</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="card">Card</option>
+        <option value="upi">UPI</option>
+      </select>
+
+      <button id="btn" type="submit">Place Order</button>
+      <p id="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="auth-session.js"></script>
+  <script src="placeorder.js"></script>
 </body>
 </html>

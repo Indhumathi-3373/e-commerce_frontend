@@ -1,24 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=""UTF-8>
-        <meta name="viewport" content="width-device-width,initial-scale-1.0">
-        <title>login</title>
-        
-        <link rel="stylesheet" href="./login.css">
-    </head>
-    <body>
-        <form action="" method="post">
-             <div><h2 style="font-size: xx-large;">welcome to login !</h2></div>
-             <label for="" >Email Id:</label><br><br>
-             <input id="ema" type="email" placeholder="enter your email id" name="uemail" required><br>
-             <label for="" >Password:</label><br><br>
-             <input id="pas"type="password" placeholder="enter password" name="upass" required><br>
-            
-            <button id="btn" onclick="move()"> submit </button>
-        </div><br><br>
-        <button>Forgot password ?</button>
-        </form>
-        <script src="login.js"> </script>
-    </body>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | Login</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  <main class="login-wrap">
+    <section class="hero-copy">
+      <p class="tag">Welcome Back</p>
+      <h1>Login to continue your order</h1>
+      <p>Access your custom jersey selections, shipping details, and order progress.</p>
+      <a href="home.html">Back to Home</a>
+    </section>
+
+    <section class="form-panel">
+      <h2>Account Login</h2>
+      <form id="loginForm" novalidate>
+        <label for="ema">Email</label>
+        <input id="ema" type="email" placeholder="Enter your email" required>
+
+        <label for="pas">Password</label>
+        <div class="pass-wrap">
+          <input id="pas" type="password" placeholder="Enter password" required>
+          <button class="toggle" id="togglePass" type="button">Show</button>
+        </div>
+
+        <button id="btn" type="submit">Login</button>
+        <p id="status" aria-live="polite"></p>
+      </form>
+
+      <a class="support" href="contact.html">Need help? Contact support</a>
+      <a class="support" href="signup.html">New user? Create account</a>
+    </section>
+  </main>
+
+  <script src="auth-session.js"></script>
+  <script src="login.js"></script>
+</body>
 </html>

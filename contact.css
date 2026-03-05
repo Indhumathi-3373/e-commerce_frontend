@@ -1,70 +1,175 @@
-*{
-            padding:0%;
-            margin:0%;
-        }
-        img{
-            width:100%;
-            height:100vh;
-            object-fit:cover;
-        }
-        #hii{
-            position:absolute;
-            left:45%;
-            top:5%;
-            color:white;
-            font-size:230%;
-        }
-        #p{
-           position:absolute;
-           top:15%;
-           left:27%;
-           color:white;
-           font-size:120%;
-        }#p1{
-           position:absolute;
-           top:25%;
-           left:3%;
-           color:white;
-           font-size:140%;
-        }#p2{
-            position:absolute;
-           top:29%;
-           left:9%;
-           color:white;
-           font-size:120%;
-           padding-top:1%;
-        }
-        form{
-            position:absolute;
-           border:2px solid white;
-           width:200px;
-           height:270px;
-           text-align:center;
-           border-radius:20px;
-           margin-left:700px;
-           top:52%;
-           color:white;
-           padding:1%;
-        }input{
-            background:transparent;
-            border:1px solid white;
-            border-radius:2px;
-            color:white;
-        }input:focus{
-            outline:none;
-        }
-        button{
-            background-color:rgba(6, 55, 250, 0.773);
-            color:white;
-            text-decoration: none;
-            padding:8px;
-            border:none;
-        }
-        button:hover{
-            background-color: blue;
-            padding:8px;
-            border-radius:10px;
-        }
-        a{
-            padding-left:760px;
-        }
+﻿:root {
+  --bg: #0d1526;
+  --surface: #f6f8fc;
+  --card: #ffffff;
+  --text: #172132;
+  --muted: #51607a;
+  --brand: #ff7a18;
+  --line: #dbe2ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #eef3ff, #fdfdff);
+  color: var(--text);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5vw;
+  background: rgba(13, 21, 38, 0.9);
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu a {
+  color: #ecf2ff;
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255, 122, 24, 0.22);
+  color: #fff;
+}
+
+.contact-wrap {
+  width: min(1100px, 92%);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-info,
+.form-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 20px rgba(17, 31, 57, 0.08);
+}
+
+.contact-info h1 {
+  margin-bottom: 0.6rem;
+}
+
+.contact-info > p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.info-card {
+  background: #f8faff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-card h2 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.info-card p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  text-decoration: none;
+  color: #0e274b;
+  font-weight: 600;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.72rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #ffd4b2;
+  border-color: #ffb985;
+}
+
+button {
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff7a18, #ffb347);
+  color: #132138;
+  font-weight: 700;
+  padding: 0.72rem;
+  cursor: pointer;
+}
+
+#status {
+  min-height: 1.4rem;
+  font-size: 0.92rem;
+  color: #1f5f2b;
+}
+
+#status.error {
+  color: #9b1f1f;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}

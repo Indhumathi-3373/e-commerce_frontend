@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | Sign Up</title>
+  <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+  <main class="signup-wrap">
+    <section class="hero-copy">
+      <p class="tag">Create Account</p>
+      <h1>Sign up to track orders and queries</h1>
+      <p>Use one account for checkout, support tickets, and order updates.</p>
+      <a href="home.html">Back to Home</a>
+    </section>
+
+    <section class="form-panel">
+      <h2>Sign Up</h2>
+      <form id="signupForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Minimum 6 characters" required>
+
+        <button id="btn" type="submit">Create Account</button>
+        <p id="status" aria-live="polite"></p>
+      </form>
+
+      <a class="support" href="login.html">Already have an account? Login</a>
+    </section>
+  </main>
+
+  <script src="auth-session.js"></script>
+  <script src="signup.js"></script>
+</body>
+</html>
