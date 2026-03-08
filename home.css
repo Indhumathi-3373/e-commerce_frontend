@@ -15,10 +15,20 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--surface);
   color: var(--text);
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+body.page-leave {
+  opacity: 0.7;
 }
 
 .topbar {
@@ -63,18 +73,65 @@ body {
 
 .hero {
   min-height: 68vh;
-  background:
-    linear-gradient(100deg, rgba(13, 21, 38, 0.85), rgba(13, 21, 38, 0.45)),
-    url("image/shop2.jpg") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
   display: grid;
   align-items: center;
   padding: 2rem 5vw;
 }
 
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 700ms ease, transform 2500ms ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(13, 21, 38, 0.85), rgba(13, 21, 38, 0.45));
+}
+
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 640px;
   color: #fff;
   animation: rise 650ms ease;
+}
+
+.hero-dots {
+  position: absolute;
+  left: 5vw;
+  bottom: 1.2rem;
+  z-index: 1;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.dot.active {
+  background: #ffb347;
 }
 
 .tag {
@@ -116,6 +173,54 @@ body {
   padding: 2.5rem 5vw 3.5rem;
 }
 
+.about-section,
+.contact-section {
+  padding: 0 5vw 2.8rem;
+}
+
+.info-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 18px rgba(18, 31, 58, 0.08);
+}
+
+.info-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+}
+
+.info-card p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.section-photo {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.65rem;
+}
+
+.inline-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  text-decoration: none;
+  background: rgba(255, 122, 24, 0.18);
+  color: #8a3e00;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+}
+
 .section-head {
   display: flex;
   justify-content: space-between;
@@ -149,6 +254,7 @@ body {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(18, 31, 58, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .card:hover {

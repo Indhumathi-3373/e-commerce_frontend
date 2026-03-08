@@ -1,5 +1,6 @@
-﻿(function () {
+(function () {
   const API_BASE = window.location.port === "5500" ? "http://localhost:3000" : "";
+  const USERS_KEY = "gt_admin_users";
 
   async function parseApiResponse(response) {
     const text = await response.text();
@@ -36,12 +37,67 @@
     }
   }
 
+  function getAdminUsers() {
+    const raw = localStorage.getItem(USERS_KEY);
+    if (!raw) return [];
+
+    try {
+      const users = JSON.parse(raw);
+      return Array.isArray(users) ? users : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function setAdminUsers(users) {
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+  }
+
+  function updateUserRecord(email, updates = {}) {
+    const users = getAdminUsers();
+    const normalizedEmail = String(email).toLowerCase();
+    let found = false;
+
+    const nextUsers = users.map((entry) => {
+      if (String(entry.email).toLowerCase() !== normalizedEmail) return entry;
+      found = true;
+      return { ...entry, ...updates };
+    });
+
+    if (!found) {
+      nextUsers.push({
+        name: "",
+        email: normalizedEmail,
+        loginCount: 0,
+        lastLoginAt: null,
+        blocked: false,
+        isLoggedIn: Boolean(updates.isLoggedIn),
+        ...updates
+      });
+    }
+
+    setAdminUsers(nextUsers);
+  }
+
   function setSession(token, user) {
     localStorage.setItem("gt_token", token);
     localStorage.setItem("gt_user", JSON.stringify(user));
+
+    if (user?.email) {
+      updateUserRecord(user.email, {
+        name: user.name || "",
+        email: String(user.email).toLowerCase(),
+        isLoggedIn: true
+      });
+    }
   }
 
   function clearSession() {
+    const user = getUser();
+    if (user?.email) {
+      updateUserRecord(user.email, { isLoggedIn: false });
+    }
+
     localStorage.removeItem("gt_token");
     localStorage.removeItem("gt_user");
   }
@@ -148,7 +204,9 @@
     clearSession,
     verifySession,
     requireAuth,
-    mountAuthMenu
+    mountAuthMenu,
+    getAdminUsers,
+    setAdminUsers
   };
 
   document.addEventListener("DOMContentLoaded", mountAuthMenu);

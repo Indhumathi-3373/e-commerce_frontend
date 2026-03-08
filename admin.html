@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Sports | Admin</title>
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="home.html">GT SPORTS</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-page">
+    <section class="stats">
+      <article>
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+      </article>
+      <article>
+        <h3>Users Logged In</h3>
+        <p id="activeUsers">0</p>
+      </article>
+      <article>
+        <h3>Total Login Events</h3>
+        <p id="loginEvents">0</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Manage User Logins</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Logins</th>
+              <th>Last Login</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Post Jersey</h2>
+      </div>
+      <form id="jerseyForm" class="jersey-form" novalidate>
+        <label for="jerseyName">Jersey Name</label>
+        <input id="jerseyName" required>
+
+        <label for="jerseyPrice">Price (Rs)</label>
+        <input id="jerseyPrice" type="number" min="1" required>
+
+        <label for="jerseyAbout">About Jersey</label>
+        <textarea id="jerseyAbout" rows="3" required></textarea>
+
+        <label for="jerseyImage">Image URL</label>
+        <input id="jerseyImage" type="url" placeholder="https://..." required>
+
+        <button type="submit">Post Jersey</button>
+        <p id="formStatus" aria-live="polite"></p>
+      </form>
+
+      <div class="posted-list">
+        <h3>Posted Jerseys</h3>
+        <ul id="jerseyList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth-session.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
